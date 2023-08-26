@@ -1,0 +1,33 @@
+<div class="form-group row">
+    <label class="col-sm-4">Student ID</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="StudentId" 
+        placeholder="Enter your studentid.....">
+        <div *ngIf="errors.StudentId.isError" class="alert alert-danger">
+            <p>{{errors.StudentId.errorMessage}}</p>
+        </div>
+        <p>{{StudentId}}</p>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-sm-4">Student Fullname</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="FullName" placeholder="Enter your fullname.....">
+    </div>
+    <p>{{FullName}}</p>
+</div>
+
+<div class="form-group row">
+    <label class="col-sm-4">Mobile</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control"  [(ngModel)]="Mobile" placeholder="Enter your mobile.....">   
+    </div>
+    <p>{{Mobile}}</p>
+</div>
+
+<button (click)="addStudent(StudentId, FullName, Mobile)" class="btn btn-primary">
+    Add
+</button>
+
+<button type="button" class="btn btn-secondary ps-3" data-bs-dismiss="modal">Close</button>
